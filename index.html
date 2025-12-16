@@ -108,6 +108,63 @@ p {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* 🎨 Pintura */
+.paint-area {
+  margin: 20px auto;
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.brush {
+  position: absolute;
+  width: 12px;
+  height: 80px;
+  background: #5d4037;
+  left: 50%;
+  top: 0;
+  transform-origin: bottom;
+  animation: paintMove 2s infinite ease-in-out;
+}
+
+.brush::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: -10px;
+  width: 32px;
+  height: 20px;
+  background: #000;
+  border-radius: 0 0 10px 10px;
+}
+
+.paint-drop {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  top: 90px;
+  left: 50%;
+  animation: drip 2s infinite;
+}
+
+.paint-drop:nth-child(2) { background: #ff5252; animation-delay: 0s; }
+.paint-drop:nth-child(3) { background: #ffd740; animation-delay: .5s; }
+.paint-drop:nth-child(4) { background: #40c4ff; animation-delay: 1s; }
+
+@keyframes paintMove {
+  0% { transform: rotate(-20deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(-20deg); }
+}
+
+@keyframes drip {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(40px); opacity: 0; }
+}
+
+
+  
 </style>
 </head>
 
@@ -122,7 +179,7 @@ p {
 
 <div class="container">
   <h1>🎂 ¡Feliz Cumpleaños! 🎉</h1>
-  <p><strong>Brisney Rocio Jerónimo Gonzales</strong></p>
+  <p><strong>Brisney</strong></p>
   <p>✨ Hoy celebramos tus <strong>20 añotes</strong> ✨</p>
 
   <div class="heart"></div>
@@ -135,11 +192,16 @@ p {
   </p>
 </div>
 
-<!-- 🎵 Música Feliz Cumpleaños (melodía tradicional) -->
-<audio autoplay loop>
-  <source src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Happy_Birthday_to_You_-_Instrumental.ogg" type="audio/ogg">
-  Tu navegador no soporta audio.
-</audio>
+<!-- 🎨 Animación pintar -->
+<div class="paint-area">
+  <div class="brush"></div>
+  <div class="paint-drop"></div>
+  <div class="paint-drop"></div>
+  <div class="paint-drop"></div>
+</div>
+
+<p>🎨 Para alguien que ama pintar y crear arte hermoso</p>
+
 
 </body>
 </html>
