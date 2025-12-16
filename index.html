@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>🎉 Feliz Cumpleaños Britney 🎂</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 3em;
+  animation: bounce 2s infinite;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  margin: 30px auto;
+  animation: pulse 1.5s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 150px;
+  background: red;
+  border-radius: 100px 100px 0 0;
+}
+
+.heart:before {
+  left: 100px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* 🎈 Globos */
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  animation: float 8s infinite ease-in;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: white;
+  top: 80px;
+  left: 50%;
+}
+
+.balloon:nth-child(1) { left: 10%; background: #ff5252; animation-delay: 0s; }
+.balloon:nth-child(2) { left: 30%; background: #ffd740; animation-delay: 2s; }
+.balloon:nth-child(3) { left: 50%; background: #69f0ae; animation-delay: 4s; }
+.balloon:nth-child(4) { left: 70%; background: #40c4ff; animation-delay: 1s; }
+.balloon:nth-child(5) { left: 90%; background: #e040fb; animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎈 Globos -->
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+
+<div class="container">
+  <h1>🎂 ¡Feliz Cumpleaños! 🎉</h1>
+  <p><strong>Britney Rocio Jerónimo Gonzales</strong></p>
+  <p>✨ Hoy celebramos tus <strong>20 años</strong> ✨</p>
+
+  <div class="heart"></div>
+
+  <p>Que este nuevo año de vida esté lleno de amor, alegría y sueños cumplidos 💖</p>
+</div>
+
+<!-- 🎵 Música Feliz Cumpleaños (melodía tradicional) -->
+<audio autoplay loop>
+  <source src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Happy_Birthday_to_You_-_Instrumental.ogg" type="audio/ogg">
+  Tu navegador no soporta audio.
+</audio>
+
+</body>
+</html>
